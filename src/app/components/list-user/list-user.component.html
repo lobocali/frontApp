@@ -1,0 +1,38 @@
+<div class="col-md-10">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Login</th>
+        <th scope="col">Repos URL</th>
+        <th scope="col">Score</th>
+        <th scope="col">Typel</th>
+        <th scope="col">Site Admin</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let usuario of usuarios">
+        <th scope="row">{{usuario.id}}</th>
+        <td>{{usuario.login}}</td>
+        <td>{{usuario.repos_url}}</td>
+        <td>{{usuario.score}}</td>
+        <td>{{usuario.type}}</td>
+        <td>{{usuario.site_admin}}</td>
+        <td> <button type="button" class="btn btn-default btn-sm"
+               (click)="redirectShowUser(usuario)">
+            <span class="glyphicon glyphicon-eye-open"></span>
+            </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="col-md-10">
+<app-bar-chart
+*ngIf="hijoCargado"
+[usuarioArray]="usuarios"
+[btnClass]="'btn-info'"
+></app-bar-chart>
+</div>

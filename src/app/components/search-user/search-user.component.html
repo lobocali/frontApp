@@ -1,0 +1,25 @@
+<div class="col-md-12">
+  <div class="container">
+    <h1>{{title}}</h1>
+    <form action="" [formGroup]="searchUserForm" (ngSubmit)="onSubmit()" class="col-md-7">
+      <p>
+
+        <Label for="name-user">
+          Nombre de Usuario
+        </Label>
+        <input type="text" name="nameUser"
+              [(ngModel)]="user.login"
+              required class="form-control"
+              formControlName="nameUser"
+              autocomplete="off"
+              >
+      </p>
+      <input type="submit" value="Buscar" class="btn btn-primary">
+      <br/>
+    </form>
+  </div>
+</div>
+<div class="col-md-6">
+  <error-notification [errorMessage]="error"></error-notification>
+</div>
+
